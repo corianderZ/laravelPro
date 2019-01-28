@@ -1,0 +1,117 @@
+联想商城(B2C项目)
+
+数据库设计
+	1、管理员表-admin
+		 id
+		 name
+		 pass
+		 time
+		 lasttime
+		 count
+		 status
+
+	2、用户表-user
+		 id
+		 email
+		 pass
+		 tel
+		 status
+		 time
+		 token  主要是为了网站安全
+		 aid 设置用户默认收货地址
+
+	3、用户信息表-userInfo
+		 id  主键、自增
+		 uid  唯一
+		 nickname  
+		 sex
+		 birthday
+		 address
+		 addressInfo
+		 headIcon
+		 
+	4、轮播图管理-slide
+		 id
+		 img
+		 order 排序
+		 title
+		 href
+
+	5、分类管理-types （每一个分类的title、keywords、description都是不一样的）
+		 id
+		 name
+		 pid
+		 path
+		 sort 排序
+		 is_lou 是否楼层
+		 title
+		 keywords
+		 description
+
+	6、分类广告-typeAds
+		 id
+		 cid
+		 img
+		 type 分类广告类型：大图和小图
+		 title
+
+	7、广告管理-Ads
+		 id
+		 img
+		 sort
+		 href
+		 title (img标签需要有title属性，所以要加title字段)
+
+	8、商品管理-goods
+		 id
+		 cid
+		 title 商品标题
+		 info 商品简介
+		 img 商品图片
+		 price 商品价格
+		 store 商品库存
+		 text 商品详细信息
+		 config 商品配置信息
+
+	9、商品小图-goodsImg
+		 id
+		 gid
+		 img
+
+	10、网站配置（一般通过数据库进行配置）
+
+	11、评论管理-comment
+		 id
+		 uid
+		 gid
+		 content
+		 time
+		 star 星级
+		 status
+		 img
+
+	12、收货地址-address
+		 id
+		 uid
+		 uname
+		 utel
+		 uaddress
+		 uaddressInfo
+		 email
+
+	13、订单表-orders
+		 id
+		 code 订单编号
+		 uid
+		 gid
+		 price
+		 num
+		 aid
+		 time
+		 paystatus 支付状态
+		 sid 订单状态
+
+	14、订单状态-orderStatus
+		 id
+		 name
+
